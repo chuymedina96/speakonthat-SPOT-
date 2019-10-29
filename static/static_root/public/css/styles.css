@@ -1,0 +1,168 @@
+body{
+    color: white;
+    background-repeat: no-repeat;
+    background-size: fill;
+    text-align:center;
+}
+ /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: fill;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+  /* Add some content at the bottom of the video/page */
+.content {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    margin-top:-700px;
+}
+
+  /* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+} h1{
+    font-size: 60px;
+}
+#sign-up-button{
+    margin-right: 10px;
+}
+#sign-up-form{
+    margin-top: 0px;
+}
+#sign-up-form input{
+    width: 350px;
+    margin: auto;
+}
+#sign-up-form button{
+    width: 350px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#second-section{
+    height: 800px;
+    margin: 0;
+    margin-top: -10px;
+}
+.box{
+    border: 2px solid white;
+}
+#second-section {
+    background: linear-gradient(rgba(0, 0, 0, .7), transparent 700%), url("../img/chi.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    text-align: center
+}
+#about-container{
+    margin-top: 270px;
+}
+footer{
+    height: 300px;
+    width: 100%;
+    background-color: grey;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+    body {
+        background: url("../img/chi.jpg");
+        background-size: fill;
+        background-repeat: no-repeat;
+
+    }
+    
+    .content {
+        position: relative;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        margin-top:20px;
+    }
+    
+    .content h1{
+        font-size: 50px;
+    }
+    #myVideo {
+        display: none;
+    }
+    .what{
+        background: url("../img/chi.jpg")
+    }
+    nav form{
+        text-align: center;
+        margin: auto;
+    }
+    #second-section{
+        margin-top: -1px;
+    }
+    .title{
+        font-size: 22px;
+    }
+    #sign-up-form input{
+        width: 200px;
+        margin: auto;
+    }
+    #sign-up-form button{
+        width: 200px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .login-form-resp{
+        margin-left: 30px;
+    }
+    .username-input{
+        margin-left: 30px;
+        width: 305px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .content {
+        position: relative;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        margin-top:-750px;
+    }
+}
+@media screen and (min-width: 1800px) {
+    .content {
+        position: relative;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        margin-top:-900px;
+    }
+}
