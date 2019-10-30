@@ -129,6 +129,7 @@ def getVideos(request):
             search_url = 'https://www.googleapis.com/youtube/v3/search'
             video_url = 'https://www.googleapis.com/youtube/v3/videos'
 
+
             search_params = {
                 'part' : 'snippet',
                 'q' : request.POST['search'],
@@ -177,10 +178,26 @@ def getVideos(request):
         
         return render(request, 'spot/video-landing.html', context)
 
+def interestSearch(request):
+
+    search = request.POST['search']
+    print(request.POST)
+
+    query_string = ""
+    for term in request.POST.getlist('search'):
+        query_string += f"{term}%20"
 
 
-# def index(request):
 
-#     r = requests.get('http://httpbin.org/status/418')
-#     print(r.text)
-#     return HttpResponse('<pre>' + r.text + '</pre>')
+
+    print(query_string)
+    # print(request.POST.getlist('search'))
+    #     query_string += f"{request.POST['search'][i]} "
+    # print('----------', query_string, '-----------')
+    
+
+    context={
+        "search": search
+    }
+
+    return HttpResponse("Searched")
