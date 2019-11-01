@@ -235,3 +235,6 @@ def interestSearch(request):
     }
 
     return render(request, 'spot/video-landing.html', context)
+    
+def wall(request):
+    return render(request, 'spot/wall.html')

@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^login$', views.login),
     url(r'^videos$', views.getVideos),
     url(r'^interest-search$', views.interestSearch),
-    url(r'^otherinterest$', views.otherInterest)
+    url(r'^otherinterest$', views.otherInterest),
+    url(r'^wall$', views.wall)
 
 ]
