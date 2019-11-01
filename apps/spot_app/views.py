@@ -201,3 +201,6 @@ def interestSearch(request):
     }
 
     return HttpResponse("Searched")
+
+def wall(request):
+    return render(request, 'spot/wall.html')
