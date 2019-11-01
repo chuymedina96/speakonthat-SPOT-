@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Index Page</title>
+        <title>Welcome to Spot</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         {% load static %}	
         <link rel="stylesheet" href="{% static "public/css/styles.css" %}">
@@ -9,18 +9,17 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">Spot</a>
+        <a class="navbar-brand" href="#">
+            Spot
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Explore <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-item active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -67,19 +66,20 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="content">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            {{message}}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                     <h1>Welcome to Spot</h1>
+                    <img src="{% static 'public/img/spotlogo2.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
                     <h3 class="title">
-                        <p href="" class="typewrite" data-period="3000" data-type='[ "A social platform where you can SPeak On That(SPOT)", "Browse through videos that interest YOU.", "Speak on those videos", "Share Ideas", "Connect with friends and collegues." ]'></p>
+                        <p class="typewrite" data-period="3000" data-type='[ "A social platform where you can SPeak On That(SPOT)", "Browse through videos that interest YOU.", "Speak on those videos", "Share Ideas", "Connect with friends and collegues." ]'></p>
                             
                         </p>
                     </h3>
@@ -91,7 +91,7 @@
                 <div class="content">
                     <header class="sign-up-borders">
                         <h1 class="register-h2">Sign up now ...</h1>
-                        <h5 class="register-h5">You must have a google account to sign up!</h5>
+                        <h5 class="register-h5">Please fill in info below to sign up!</h5>
                     </header>
 
                     <form action="/register" method="POST">
@@ -115,7 +115,6 @@
                         <input class="form-control" type="password" name="confirm" placeholder="Confirm Password"><br>
                         
                         <button type="submit" class="btn btn-primary btn-lg btn-block">sign up</button>
-                        <button type="submit" class="btn btn-danger btn-lg btn-block">sign up with google</button>
 
                     </form>
                 </div>
@@ -135,8 +134,8 @@
     <div class="row" id="second-section">
         <div class="col-md-12 box">
             <div class="container" id="about-container">
-                <h1>About Spot</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <h1 class="about-spot">About Spot</h1>
+                <h4>Spot is a social networking site where users can voice their opinions on the topics that interest them the most. Users can specify their interests and based of that, the app will generate top videos from youtube and display them for them in a nice interface where users can then click on a video and upload a recorded opinion on it.</h4>
             </div>
         </div>
     </div>
@@ -149,22 +148,21 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="{% static 'public/img/chi.jpg'%}" alt="First slide">
+            <div class="carousel-item active" id="first-slide">
+                <img class="d-block w-100" src="{% static 'public/img/videos.jpeg'%}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block" id="carsouel-content">
-                    <h1>Welcome</h1>
-                    <p>...</p>
+                    <h1>Browse through videos of your interest</h1>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{% static 'public/img/chi.jpg'%}" alt="Second slide">
+                <img class="d-block w-100" src="{% static 'public/img/videos.jpeg'%}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Welcome</h1>
                     <p>...</p>
                 </div>
             </div>
             <div class="carousel-item">
-            <img class="d-block w-100" src="{% static 'public/img/chi.jpg'%}" alt="Third slide">
+            <img class="d-block w-100" src="{% static 'public/img/videos.jpeg'%}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Welcome</h1>
                     <p>...</p>
@@ -184,13 +182,10 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h3>Learn more</h3>
+                <div class="col-md-6 footer-stuff">
+                    <h3>Location: Chicago, Illinois</h3>
                 </div>
-                <div class="col-md-4">
-                    <h3>Contact us</h3>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6 footer-stuff">
                     <h3>Follow us on social media</h3>
                 </div>
             </div>
