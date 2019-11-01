@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^logout$', views.logout),
     url(r'^login$', views.login),
     url(r'^videos$', views.getVideos),
-    url(r'^interest-search$', views.interestSearch)
+    url(r'^interest-search$', views.interestSearch),
+    url(r'^otherinterest$', views.otherInterest)
 
 ]

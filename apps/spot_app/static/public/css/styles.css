@@ -36,7 +36,9 @@ body{
     color: #fff;
     cursor: pointer;
 }
-
+.typewrite{
+    font-size: 25px;
+}
 #myBtn:hover {
     background: #ddd;
     color: black;
@@ -64,9 +66,6 @@ body{
     margin: 0;
     margin-top: -10px;
 }
-.box{
-    border: 2px solid white;
-}
 #second-section {
     background: linear-gradient(rgba(0, 0, 0, .7), transparent 700%), url("../img/chi.jpg");
     background-repeat: no-repeat;
@@ -77,15 +76,20 @@ body{
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    text-align: center
+    text-align: center;
+    border: none;
+    height: 100vh;
 }
 #about-container{
     margin-top: 270px;
 }
+#about-container h1{
+    font-size: 90px;
+}
 footer{
     height: 300px;
     width: 100%;
-    background-color: grey;
+    background-color: #343a40;
 }
 .interests-title{
     color:black;
@@ -110,16 +114,17 @@ input[type='checkbox']:checked {
 #box1{
     height: 100vh;
     width: 100%;
-    background-image: url("../img/slider-img-4.jpg");
+    background: linear-gradient(rgba(0, 0, 0, .7), transparent 700%),url("../img/slider-img-4.jpg");
     background-size: cover;
     display: table;
     background-attachment: fixed;
+    margin-top: -10px;
 }
 
 #box2{
     height: 100vh;
     width: 100%;
-    background-image: url("../img/slider-img-5.jpg");
+    background: linear-gradient(rgba(0, 0, 0, .7), transparent 700%),url("../img/slider-img-5.jpg");
     background-size: cover;
     display: table;
     background-attachment: fixed;
@@ -128,22 +133,38 @@ input[type='checkbox']:checked {
 #box3{
     height: 100vh;
     width: 100%;
-    background-image: url("../img/slider-img-6.jpg");
+    background: linear-gradient(rgba(0, 0, 0, .7), transparent 700%),url("../img/slider-img-6.jpg");
     background-size: cover;
     display: table;
     background-attachment: fixed;
 }
 .para-h1{
     font-family: arial black;
-    font-size: 50px;
+    font-size: 90px;
     color: white;
     margin: 0px;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
 }
+.content img{
+    height: 100px;
+    width: 80px;
 
-
+}
+.carousel-inner img{
+    height: 800px;
+}
+#carsouel-content h1{
+    color: #f05b5b
+}
+.about-spot{
+    margin-top:-10px;
+    margin-bottom: 40px;
+}
+.footer-stuff{
+    margin-top: 100px
+}
 
 
 
@@ -219,6 +240,6 @@ input[type='checkbox']:checked {
         color: #f1f1f1;
         width: 100%;
         padding: 20px;
-        margin-top:-900px;
+        margin-top:-1000px;
     }
 }

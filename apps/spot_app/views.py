@@ -5,7 +5,11 @@ from isodate import parse_duration
 import requests
 import bcrypt
 from .models import *
+from googleapiclient.discovery import build
+import json
 
+service     = build('youtube', 'v3', developerKey=keys.YOUTUBE_DATA_API_KEY)
+collection  = service.search()
 
 #Create your views here.
 def index(request):
@@ -27,11 +31,9 @@ def interests(request):
 
         context={
             "loggedInUser"  : loggedInUser,
-            "all_users"     : User.objects.all(),
-            "all_messages"  : Message.objects.all().order_by("-created_at"),
-            
+            "all_users"     : User.objects.all()
         }
-        return render(request, "spot/interests.html", context)
+        return render(request, "spot/index.html", context)
 
 def register(request):
     
@@ -172,32 +174,64 @@ def getVideos(request):
 
                 videos.append(video_data)
 
-        context = {
+        loggedInUser    = User.objects.get(id=request.session["user_id"])
+
+        context={
+            "loggedInUser"  : loggedInUser,
+            "all_users"     : User.objects.all(),
             'videos' : videos
         }
         
         return render(request, 'spot/video-landing.html', context)
 
+
+def otherInterest(request):
+    if("user_id" not in request.session):
+        messages.error(request, "You must be logged in in order to access this page. Rules are rules")
+        return redirect("/")
+
+    loggedInUser    = User.objects.get(id=request.session["user_id"])
+
+    context={
+        "loggedInUser"  : loggedInUser,
+        "all_users"     : User.objects.all(),
+    }
+    return render(request, "spot/interests.html", context)
+
+
 def interestSearch(request):
 
+    if("user_id" not in request.session):
+        messages.error(request, "You must be logged in in order to access this page. Rules are rules")
+        return redirect("/")
+
+    #Ciso code
+    response = collection.list(part='snippet', q='climate change', type='video').execute()
+    print (json.dumps(response, sort_keys=True, indent=4))
+
+    video_id_results = []
+
+    for item in response['items']:
+        video_id_results.append(item['snippet']['thumbnails']['default'])
+        
+    print(video_id_results)
+
+    #code from the other day
     search = request.POST['search']
+
     print(request.POST)
 
     query_string = ""
+
     for term in request.POST.getlist('search'):
         query_string += f"{term}%20"
 
-
-
-
     print(query_string)
-    # print(request.POST.getlist('search'))
-    #     query_string += f"{request.POST['search'][i]} "
-    # print('----------', query_string, '-----------')
-    
 
-    context={
+
+    context = {
+        'ids': video_id_results,
         "search": search
     }
 
-    return HttpResponse("Searched")
+    return render(request, 'spot/video-landing.html', context)
