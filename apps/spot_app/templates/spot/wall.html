@@ -1,0 +1,367 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    {% load static %}	
+
+
+    <style>
+        {% comment %} .nav-item, .nav-item dropdown, .nav-link dropdown-toggle{
+            display: inline-block;
+            text-align: left;
+        } {% endcomment %}
+
+        .header{
+            background-color: #343a40;
+            width: 100%;
+            height: 60px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        {% comment %} a{            
+            position: relative;
+            top: 10px;
+            right: 425px;
+            font-size: 19px;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+        } {% endcomment %}
+
+        {% comment %} .container{
+        
+            margin-top: 10px;
+            
+        } {% endcomment %}
+
+        {% comment %} a.dropdown-item{
+            color:black;
+            position: relative;           
+            bottom:5px;
+            left:0px;
+            top:-6px;
+            display: block;
+            text-decoration: none;
+
+        } {% endcomment %}
+
+        .header img{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            right: 508px;
+        }
+        .img-container{
+            margin-top: 10px;
+            padding: 10px;  
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <div class="container">
+            <a class="navbar-brand" href="#">Spot</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                              <a class="nav-link" href="/interests">Interests</a>
+                        </li>
+                        <li class="nav-item">
+                              <a class="nav-link" href="/videos">Search Youtube</a>
+                        </li>
+                        <li class="nav-item">
+                              <a class="nav-link" href="/otherinterest">Other Interests Page</a>
+                        </li>
+                  </ul>
+                  <div class="form-row align-items-center">
+                        <div class="col-auto">
+                              <a href="/logout">Welcome, {{loggedInUser.firstName}}</a>
+                        </div>
+                        <div class="col-auto">
+                              <a href="/logout"><button type="submit" class="btn btn-primary">Log out</button></a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</nav>
+
+<body>
+   
+        <div class="container">
+            <div class="row">
+                <h2 style="color:black; font-size: 30px; font-family: Arial; margin-right: 10px; margin-bottom:30px;">Politics</h2>
+                <div class="col-xs-12">    
+                        <div id="imageCarousel" class="carousel slide" data-interval="false"
+                        data-ride="carousel" data-pause="hover" data-wrap="true">
+   
+                       <ol class="carousel-indicators">
+                           <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                           <li data-target="#imageCarousel" data-slide-to="1"></li>
+                           <li data-target="#imageCarousel" data-slide-to="2"></li>
+                       </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <img src="{% static 'public/img/politics6.jpeg' %}" class="img-responsive">
+                                        <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/UqMJao-P_44" data-target="#myModal">
+                                            Play Video
+                                          </button>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <img src="{% static 'public/img/politics5.jpeg' %}" class="img-responsive">
+                                        <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/V-kATkZ3uZY" data-target="#myModal">
+                                            Play Video
+                                          </button>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <img src="{% static 'public/img/politics4.jpeg' %}" class="img-responsive">
+                                        <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/Nkuej4H30_8" data-target="#myModal">
+                                            Play Video
+                                          </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <img src="{% static 'public/img/politics3.jpeg' %}" class="img-responsive">
+                                        <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/IWA8iuNBw-U" data-target="#myModal">
+                                            Play Video
+                                          </button>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <img src="{% static 'public/img/politics2.jpeg' %}" class="img-responsive">
+                                        <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/iZ1NqdbzI-Q" data-target="#myModal">
+                                            Play Video
+                                          </button>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <img src="{% static 'public/img/politics1.jpeg' %}" class="img-responsive">
+                                        <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/MwuBD0pINhc" data-target="#myModal">
+                                            Play Video
+                                          </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a href="#imageCarousel" class="carousel-control right" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+                <div class="row">
+                        <h1 style="color:black; font-size: 30px; font-family: Arial; margin-right: 10px; margin-bottom:30px">Sports</h1>
+                        <div class="col-xs-12">
+            
+                            <div id="imageCarousel2" class="carousel slide" data-interval="false"
+                                 data-ride="carousel" data-pause="hover" data-wrap="true">
+            
+                                <ol class="carousel-indicators">
+                                    <li data-target="#imageCarousel2" data-slide-to="0" class="active"></li>
+                                    <li data-target="#imageCarousel2" data-slide-to="1"></li>
+                                    <li data-target="#imageCarousel2" data-slide-to="2"></li>
+                                </ol>
+            
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/sports6.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/JyagIQSryKQ" data-target="#myModal">
+                                                    Play Video
+                                                  </button>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/sports5.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/L5TXiYfd3tE" data-target="#myModal">
+                                                    Play Video
+                                                  </button>                                                
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/sports4.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/bC9Fsq70Z4g" data-target="#myModal">
+                                                    Play Video
+                                                  </button>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/sports3.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/WUopVX0hY4Y" data-target="#myModal">
+                                                    Play Video
+                                                  </button> 
+                                                
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/sports2.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/nnX1YeuiuBM" data-target="#myModal">
+                                                    Play Video
+                                                  </button>                                                
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/sports1.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/ARLugWyTDdo" data-target="#myModal">
+                                                    Play Video
+                                                  </button>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <a href="#imageCarousel2" class="carousel-control left" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a href="#imageCarousel2" class="carousel-control right" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>    
+                        </div>
+                    </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+                <div class="row">
+                        <h1 style="color:black; font-size: 30px; font-family: Arial; margin-right: 10px; margin-bottom:30px">Technology</h1>
+                        <div class="col-xs-12">            
+                            <div id="imageCarousel3" class="carousel slide" data-interval="false"
+                                 data-ride="carousel" data-pause="hover" data-wrap="true">
+            
+                                <ol class="carousel-indicators">
+                                    <li data-target="#imageCarousel3" data-slide-to="0" class="active"></li>
+                                    <li data-target="#imageCarousel3" data-slide-to="1"></li>
+                                    <li data-target="#imageCarousel3" data-slide-to="2"></li>
+                                </ol>
+            
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="row">                                        
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/tech6.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/BZ5fdNNHVu0" data-target="#myModal">Play Video</button>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/tech5.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/t5TebbzmsOw" data-target="#myModal">Play Video</button>
+                                                
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/tech4.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/raAkFKm9afg" data-target="#myModal">Play Video</button>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/tech3.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/raAkFKm9afg" data-target="#myModal">Play Video</button>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/tech2.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/pyldH6sefTQ" data-target="#myModal">Play Video</button>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img src="{% static 'public/img/tech1.jpeg' %}" class="img-responsive">
+                                                <button type="button" class="btn btn-danger video-btn"\\\\ data-toggle="modal" data-src="https://www.youtube.com/embed/3ytiaVCiB6A" data-target="#myModal">Play Video</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <a href="#imageCarousel3" class="carousel-control left" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a href="#imageCarousel3" class="carousel-control right" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- ************** -->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'public/img/response1.jpeg' %}" height="80" width="120">
+                            <img src="{% static 'public/img/response2.jpeg' %}" height="80" width="120">
+                            <img src="{% static 'public/img/response3.jpeg' %}" height="80" width="120">
+                            <img src="{% static 'public/img/response4.jpeg' %}" height="80" width="120">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script>
+            $(document).ready(function() {
+
+                // Gets the video src from the data-src on each button
+                
+                var $videoSrc;  
+                $('.video-btn').click(function() {
+                    $videoSrc = $(this).data( "src" );
+                });
+                console.log($videoSrc);
+                
+                  
+                  
+                // when the modal is opened autoplay it  
+                $('#myModal').on('shown.bs.modal', function (e) {
+                    
+                // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+                $("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+                })
+                  
+                
+                
+                // stop playing the youtube video when I close the modal
+                $('#myModal').on('hide.bs.modal', function (e) {
+                    // a poor man's stop video
+                    $("#video").attr('src',$videoSrc); 
+                })
+                });
+            </script>
+    </body>
+</html>
