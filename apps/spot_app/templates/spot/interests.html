@@ -56,11 +56,11 @@
         <h1 class="interests-title">What interests will you be speaking on today?</h1>
         <div class="row">
             <div class="col-md-12 interests-boxes">
-                <form action="interest-search" method="POST">
+                {% comment %} <form action="interest-search" method="POST"> {% endcomment %}
                 {% csrf_token %} 
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" name="search" type="checkbox" id="inlineCheckbox1" value="tech">
-                        <label class="form-check-label" for="inlineCheckbox1">Tech</label>
+                        <label class="form-check-label" for="inlineCheckbox1">Technology</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" name ="search" type="checkbox" id="inlineCheckbox2" value="webdevelopment">
@@ -79,6 +79,10 @@
                         <label class="form-check-label" for="inlineCheckbox1">Politics</label>
                     </div>
                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" name ="search" type="checkbox" id="inlineCheckbox1" value="politics">
+                        <label class="form-check-label" for="inlineCheckbox1">Sports</label>
+                    </div>
+                    <div class="form-check form-check-inline">
                         <input class="form-check-input" name="search" type="checkbox" id="inlineCheckbox2" value="news">
                         <label class="form-check-label" for="inlineCheckbox2">News</label>
                     </div>
@@ -86,7 +90,7 @@
                         <input class="form-check-input" name="search" type="checkbox" id="inlineCheckbox2" value="diy">
                         <label class="form-check-label" for="inlineCheckbox2">DIY</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    <a href="/wall"><button class="btn btn-primary btn-lg btn-block">Submit</button></a>
                 </form>
             </div>
         </div>
